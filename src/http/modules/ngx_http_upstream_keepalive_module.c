@@ -325,7 +325,7 @@ ngx_http_upstream_free_keepalive_peer(ngx_peer_connection_t *pc, void *data,
         item = ngx_queue_data(q, ngx_http_upstream_keepalive_cache_t, queue);
     }
 
-    ngx_queue_insert_head(&kp->conf->cache, q);
+    ngx_queue_insert_tail(&kp->conf->cache, q);
 
     item->connection = c;
 
